@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kantor by Wolak Wojciech</title>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/calculator.js"></script>
@@ -17,25 +18,25 @@
     <main class="container">
         <form action="#" class="calculator">
 
-            <fieldset class="firstCurrency">
-                <legend class="fistCurrency--legendName">Pierwsza waluta</legend>
-                <p>
-                    <select name="" id="" class="firstCurrency--name">
+            <fieldset class="calculator__fieldset calculator__firstCurrency">
+                <legend class="calculator__legendName">Pierwsza waluta</legend>
+                <p class="calculator__field">
+                    <select class="calculator__input calculator__firstCurrency--name">
                         <option value="pln">Złoty</option>
                         <option value="usd">Dolar Amerykański</option>
                         <option value="euro">Euro</option>
                         <option value="psd">Funt</option>
                     </select>
                 </p>
-                <p>
-                    <input type="number" class="firstCurrency--value">
+                <p class="calculator__field">
+                    <input type="number" class="calculator__input calculator__firstCurrency--value" required>
                 </p>
             </fieldset>
 
-            <fieldset class="secondCurrency">
-                <legend class="secondCurrency--legendName">Druga waluta</legend>
-                <p>
-                    <select name="" id="" class="secondCurrency--name">
+            <fieldset class="calculator__fieldset calculator__secondCurrency">
+                <legend class="calculator__legendName">Druga waluta</legend>
+                <p class="calculator__field">
+                    <select class="calculator__input calculator__secondCurrency--name">
                         <option value="pln">Złoty</option>
                         <option value="usd">Dolar Amerykański</option>
                         <option value="euro">Euro</option>
@@ -44,10 +45,10 @@
                 </p>
             </fieldset>
 
-            <button class="calculator__submit">Przelicz</button>
+            <button class="calculator__input calculator__submit">Przelicz</button>
         </form>
 
-        <div class="final"></div>
+        <div class="final">Wpisz </div>
         <p class="information"></p>
     </main>
 </body>

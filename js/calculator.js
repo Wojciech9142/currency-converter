@@ -3,9 +3,9 @@ let formElement = document.querySelector(".calculator");
 formElement.addEventListener("submit", (event) => {
     event.defaultPrevented;
 
-    let firstCurrencyName = document.querySelector(".firstCurrency--name").value;
-    let firstCurrencyValue = +document.querySelector(".firstCurrency--value").value;
-    let secondCurrencyName = document.querySelector(".secondCurrency--name").value;
+    let firstCurrencyName = document.querySelector(".calculator__firstCurrency--name").value;
+    let firstCurrencyValue = +document.querySelector(".calculator__firstCurrency--value").value;
+    let secondCurrencyName = document.querySelector(".calculator__secondCurrency--name").value;
 
     console.log(firstCurrencyName);
     console.log(firstCurrencyValue);
