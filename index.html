@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/calculator.js"></script>
+    <link rel="icon" href="images/icon.png">
+    <meta property="og:title" content="My first project with JavaScript, Currency Coverter!!!" />
+    <meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
+    <meta property="og:image" content="images/plakat.png" />
 </head>
 
 <body>
@@ -16,31 +20,31 @@
         <h1 class="banner__header">Przelicznik walut</h1>
     </header>
     <main class="container">
-        <form class="calculator">
+        <form class="calculator js-converterForm">
 
             <fieldset class="calculator__fieldset calculator__firstCurrency">
                 <legend class="calculator__legend">Pierwsza waluta</legend>
                 <p class="calculator__field">
-                    <select class="calculator__input js-firstCurrency-name">
-                        <option value="pln">Złoty</option>
-                        <option value="usd">Dolar Amerykański</option>
-                        <option value="euro">Euro</option>
-                        <option value="psd">Funt</option>
+                    <select class="calculator__input js-inputCurrencyName">
+                        <option value="PLN">Złoty</option>
+                        <option value="USD">Dolar Amerykański</option>
+                        <option value="EUR">Euro</option>
+                        <option value="PSD">Funt</option>
                     </select>
                 </p>
                 <p class="calculator__field">
-                    <input type="number" class="calculator__input js-firstCurrency-value" required>
+                    <input type="number" class="calculator__input js-inputCurrencyValue" required>
                 </p>
             </fieldset>
 
             <fieldset class="calculator__fieldset calculator__secondCurrency">
                 <legend class="calculator__legend">Druga waluta</legend>
                 <p class="calculator__field">
-                    <select class="calculator__input js-secondCurrency-name">
-                        <option value="pln">Złoty</option>
-                        <option value="usd">Dolar Amerykański</option>
-                        <option value="euro">Euro</option>
-                        <option value="psd">Funt</option>
+                    <select class="calculator__input js-outputCurrencyName">
+                        <option value="PLN">Złoty</option>
+                        <option value="USD">Dolar Amerykański</option>
+                        <option value="EUR">Euro</option>
+                        <option value="PSD">Funt</option>
                     </select>
                 </p>
             </fieldset>

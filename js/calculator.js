@@ -1,3 +1,77 @@
+{
+    const formElement = document.querySelector(".js-converterForm");
+
+    const convert = (event) => {
+        event.preventDefault();
+
+        convertToPln()
+    }
+
+    const convertToPln = () => {
+        const inputCurrencyName = document.querySelector(".js-inputCurrencyName").value;
+        const inputCurrencyValue = +document.querySelector(".js-inputCurrencyValue").value;
+
+        plnRate = 1;
+        usdRate = 3.95;
+        eurRate = 4.44;
+        psdRate = 4.95;
+
+        switch (inputCurrencyName) {
+            case "PLN":
+                plnValue = inputCurrencyValue * plnRate;
+                break;
+            case "USD":
+                plnValue = inputCurrencyValue * usdRate;
+                break;
+            case "EUR":
+                plnValue = inputCurrencyValue * eurRate;
+                break;
+            case "PSD":
+                plnValue = inputCurrencyValue * psdRate;
+                break;
+        }
+
+        convertToOutputCurrency(plnValue, inputCurrencyValue, inputCurrencyName);
+    }
+
+    const convertToOutputCurrency = (_plnValue, _inputCurrencyValue, _inputCurrencyName) => {
+        const outputCurrencyName = document.querySelector(".js-outputCurrencyName").value;
+        let result;
+
+        switch (outputCurrencyName) {
+
+            case "PLN":
+                result = plnValue / plnRate;
+                break;
+
+            case "USD":
+                result = plnValue / usdRate;
+                break;
+
+            case "EUR":
+                result = plnValue / eurRate;
+                break;
+
+            case "PSD":
+                result = plnValue / psdRate;
+                break;
+        }
+
+        console.log(`${_inputCurrencyValue} ${_inputCurrencyName} = ${result} ${outputCurrencyName}`);
+        
+        const message = `${_inputCurrencyValue} ${_inputCurrencyName} = ${result.toFixed(2)} ${outputCurrencyName}`;
+        
+        let finalElement = document.querySelector(".final");
+        let informationElement = document.querySelector(".information");
+
+        finalElement.innerText = message;
+        informationElement.innerText = "(wartości według kursów walut z dnia 14.06.2020 r. godz. 17:50)";
+
+    }
+    formElement.addEventListener("submit", convert);
+}
+
+/*
 let formElement = document.querySelector(".calculator");
 
 formElement.addEventListener("submit", (event) => {
@@ -118,3 +192,5 @@ formElement.addEventListener("submit", (event) => {
 
 
 });
+*/
+
