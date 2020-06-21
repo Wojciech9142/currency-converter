@@ -73,12 +73,19 @@ body{
 
 .final{
     padding: 30px;
-    font-size: 30px;
+    color: white;
+    font-weight: bold;
     text-align: center;
     border-bottom: 5px solid teal;
+    font-size: 40px;
+    background-color: teal;
+    margin: 10px;
 }
 
 .information{
     text-align: center;
     margin: 20px 0;
+    color: white;
+    background-color: teal;
+    padding: 5px 0;
 }

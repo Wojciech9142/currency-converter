@@ -2,7 +2,7 @@
     const formElement = document.querySelector(".js-converterForm");
 
     const convert = (event) => {
-        event.preventDefault();
+      //  event.preventDefault();
 
         convertToPln()
     }
@@ -59,7 +59,7 @@
 
         console.log(`${_inputCurrencyValue} ${_inputCurrencyName} = ${result} ${outputCurrencyName}`);
         
-        const message = `${_inputCurrencyValue} ${_inputCurrencyName} = ${result.toFixed(2)} ${outputCurrencyName}`;
+        const message = `${_inputCurrencyValue.toFixed(2)} ${_inputCurrencyName} = ${result.toFixed(2)} ${outputCurrencyName}`;
         
         let finalElement = document.querySelector(".final");
         let informationElement = document.querySelector(".information");
@@ -68,7 +68,7 @@
         informationElement.innerText = "(wartości według kursów walut z dnia 14.06.2020 r. godz. 17:50)";
 
     }
-    formElement.addEventListener("submit", convert);
+    formElement.addEventListener("change", convert);
 }
 
 /*
