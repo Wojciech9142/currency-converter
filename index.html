@@ -16,12 +16,12 @@
         <h1 class="banner__header">Przelicznik walut</h1>
     </header>
     <main class="container">
-        <form action="#" class="calculator">
+        <form class="calculator">
 
             <fieldset class="calculator__fieldset calculator__firstCurrency">
-                <legend class="calculator__legendName">Pierwsza waluta</legend>
+                <legend class="calculator__legend">Pierwsza waluta</legend>
                 <p class="calculator__field">
-                    <select class="calculator__input calculator__firstCurrency--name">
+                    <select class="calculator__input js-firstCurrency-name">
                         <option value="pln">Złoty</option>
                         <option value="usd">Dolar Amerykański</option>
                         <option value="euro">Euro</option>
@@ -29,14 +29,14 @@
                     </select>
                 </p>
                 <p class="calculator__field">
-                    <input type="number" class="calculator__input calculator__firstCurrency--value" required>
+                    <input type="number" class="calculator__input js-firstCurrency-value" required>
                 </p>
             </fieldset>
 
             <fieldset class="calculator__fieldset calculator__secondCurrency">
-                <legend class="calculator__legendName">Druga waluta</legend>
+                <legend class="calculator__legend">Druga waluta</legend>
                 <p class="calculator__field">
-                    <select class="calculator__input calculator__secondCurrency--name">
+                    <select class="calculator__input js-secondCurrency-name">
                         <option value="pln">Złoty</option>
                         <option value="usd">Dolar Amerykański</option>
                         <option value="euro">Euro</option>
@@ -48,8 +48,8 @@
             <button class="calculator__input calculator__submit">Przelicz</button>
         </form>
 
-        <div class="final">Wpisz </div>
-        <p class="information"></p>
+        <div class="final">Wpisz kwotę jaką chcesz przeliczyć</div>
+        <aside class="information"></aside>
     </main>
 </body>
 

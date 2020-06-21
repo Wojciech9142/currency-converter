@@ -1,11 +1,13 @@
 let formElement = document.querySelector(".calculator");
 
 formElement.addEventListener("submit", (event) => {
-    event.defaultPrevented;
+    event.preventDefault();
 
-    let firstCurrencyName = document.querySelector(".calculator__firstCurrency--name").value;
-    let firstCurrencyValue = +document.querySelector(".calculator__firstCurrency--value").value;
-    let secondCurrencyName = document.querySelector(".calculator__secondCurrency--name").value;
+    let firstCurrencyName = document.querySelector(".js-firstCurrency-name").value;
+    let firstCurrencyValue = +document.querySelector(".js-firstCurrency-value").value;
+    let secondCurrencyName = document.querySelector(".js-secondCurrency-name").value;
+    let pln, usd, euro, psd, message;
+
 
     console.log(firstCurrencyName);
     console.log(firstCurrencyValue);
@@ -13,10 +15,10 @@ formElement.addEventListener("submit", (event) => {
 
     switch (firstCurrencyName) {
         case 'pln':
-            var pln = 1;
-            var usd = 0.25;
-            var euro = 0.23;
-            var psd = 0.2;
+            pln = 1;
+            usd = 0.25;
+            euro = 0.23;
+            psd = 0.2;
             if (firstCurrencyValue === 1)
                 var currency = "złoty";
             else if (firstCurrencyValue <= 4)
@@ -25,10 +27,10 @@ formElement.addEventListener("submit", (event) => {
                 var currency = "złoty";
             break;
         case 'usd':
-            var pln = 3.95;
-            var usd = 1;
-            var euro = 0.89;
-            var psd = 0.8;
+            pln = 3.95;
+            usd = 1;
+            euro = 0.89;
+            psd = 0.8;
             if (firstCurrencyValue === 1)
                 var currency = "dolar amerykański";
             else if (firstCurrencyValue <= 4)
@@ -37,20 +39,20 @@ formElement.addEventListener("submit", (event) => {
                 var currency = "dolarów amerykańskich";
             break;
         case 'euro':
-            var pln = 4.44;
-            var usd = 1.13;
-            var euro = 1;
-            var psd = 0.9;
+            pln = 4.44;
+            usd = 1.13;
+            euro = 1;
+            psd = 0.9;
             var currency = "euro";
             break;
         case 'psd':
-            var pln = 4.95;
-            var usd = 1.25;
-            var euro = 1.11;
-            var psd = 1;
-            if(firstCurrencyValue === 1)
+            pln = 4.95;
+            usd = 1.25;
+            euro = 1.11;
+            psd = 1;
+            if (firstCurrencyValue === 1)
                 var currency = "funt";
-            else if(firstCurrencyValue <= 4)
+            else if (firstCurrencyValue <= 4)
                 var currency = "funty";
             else
                 var currency = "funtów";
@@ -69,19 +71,41 @@ formElement.addEventListener("submit", (event) => {
 
     switch (secondCurrencyName) {
         case 'pln':
-            var message = `${firstCurrencyValue} ${currency} = ${plnValue} złotych.`;
+
+            if (firstCurrencyValue === 1)
+                message = `${firstCurrencyValue} ${currency} = ${plnValue} złoty.`;
+            else if (firstCurrencyValue <= 4)
+                message = `${firstCurrencyValue} ${currency} = ${plnValue} złote.`;
+            else
+                message = `${firstCurrencyValue} ${currency} = ${plnValue} złoty.`;
+
             console.log(message);
             break;
         case 'usd':
-            var message = `${firstCurrencyValue} ${currency} = ${usdValue} dolarów amerykańskich.`;
+
+
+            if (firstCurrencyValue === 1)
+                message = `${firstCurrencyValue} ${currency} = ${usdValue} dolar amerykański.`;
+            else if (firstCurrencyValue <= 4)
+                message = `${firstCurrencyValue} ${currency} = ${usdValue} dolary amerykańskie.`;
+            else
+                message = `${firstCurrencyValue} ${currency} = ${usdValue} dolarów amerykańskich.`;
+
             console.log(message);
             break;
         case 'euro':
-            var message = `${firstCurrencyValue} ${currency} = ${euroValue} euro.`;
+            message = `${firstCurrencyValue} ${currency} = ${euroValue} euro.`;
             console.log(message);
             break;
         case 'psd':
-            var message = `${firstCurrencyValue} ${currency} = ${psdValue} funtów.`;
+
+            if (firstCurrencyValue === 1)
+                message = `${firstCurrencyValue} ${currency} = ${psdValue} funt.`;
+            else if (firstCurrencyValue <= 4)
+                message = `${firstCurrencyValue} ${currency} = ${psdValue} funty.`;
+            else
+                message = `${firstCurrencyValue} ${currency} = ${psdValue} funtów.`;
+
             console.log(message);
             break;
     }
@@ -89,8 +113,8 @@ formElement.addEventListener("submit", (event) => {
     let finalElement = document.querySelector(".final");
     let informationElement = document.querySelector(".information");
 
-    finalElement.innerText = `${message}`;
-    informationElement.innerText = "(wartości według kursów walut z dnia 14.06.2020r. godz. 17:50)";
+    finalElement.innerText = message;
+    informationElement.innerText = "(wartości według kursów walut z dnia 14.06.2020 r. godz. 17:50)";
 
-    
+
 });
