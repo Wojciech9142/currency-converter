@@ -68,7 +68,7 @@
         informationElement.innerText = "(wartości według kursów walut z dnia 14.06.2020 r. godz. 17:50)";
 
     }
-    formElement.addEventListener("change", convert);
+    formElement.addEventListener("input", convert);
 }
 
 /*
