@@ -3,12 +3,19 @@
     font-family: 'MuseoModerno', cursive;
 }
 
+body{
+    background-image: url("../images/money.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 .banner{
     text-align: center;
 }
 
 .banner__header{
     font-size: 50px;
+    color: white;
 }
 
 .calculator{
